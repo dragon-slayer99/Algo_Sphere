@@ -1,0 +1,119 @@
+.cardcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding: 18px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 100%;
+    margin: auto;
+}
+
+.cardcontainer {
+    position: relative;
+    background-color: #020617;
+    background-image:
+        linear-gradient(to right, rgba(71, 85, 105, 0.15) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(71, 85, 105, 0.15) 1px, transparent 1px),
+        radial-gradient(circle at 50% 60%,
+            rgba(236, 72, 153, 0.15) 0%,
+            rgba(168, 85, 247, 0.1) 25%,
+            rgba(37, 99, 235, 0.05) 50%,
+            transparent 80%);
+    background-size: 80px 80px, 80px 80px, 100% 100%;
+    background-blend-mode: overlay;
+
+    /* nice glow and depth */
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.15);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.cardcontainer:hover {
+    box-shadow: 0 0 30px rgba(236, 72, 153, 0.25);
+    transform: scale(1.03);
+}
+
+.cardcontainer a{
+    text-decoration: none;
+    color: transparent;
+    transition: text-decoration 0.3s ease-in-out, color 0.3s ease;
+}
+
+.cardcontainer a:hover {
+    text-decoration: underline;
+    color: var(--primary-400);
+}
+
+
+.cardcontainer p {
+    color: var(--accent-200);
+}
+
+.cardcontainer h1 {
+    font-size: 1.6rem;
+    word-spacing: 3px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+
+.complexity {
+    background-color: var(--accent-100);
+    display: block;
+    color: black;
+    text-align: center;
+    width: 80%;
+    white-space: nowrap;
+    font-size: 85%;
+    border-radius: 30px;
+    padding: 5px 8px;
+    font-weight: 700;
+    gap: 7px;
+    transform: translateY(0);
+    filter: none;
+    transition: transform 300ms ease-in-out, filter 300ms ease;
+}
+
+.complexity:hover {
+    transform: translateY(-3px);
+    filter: brightness(120%);
+}
+
+.complexitybadges {
+    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    justify-content: center;
+    /** Works on main-axis (Horizantal)*/
+    align-items: center;
+}
+
+/* Medium devices (tablets, small laptops) */
+@media (min-width: 450px) and (max-width: 719px) {
+    .complexity {
+        width: 50%;
+    }
+
+}
+
+
+.fadeUp {
+    animation: fadeUp both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 30%;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}

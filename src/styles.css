@@ -1,0 +1,151 @@
+@import 'tailwindcss';
+
+:root {
+  --text-50: hsl(84, 38%, 95%);
+  --text-100: hsl(82, 37%, 90%);
+  --text-200: hsl(83, 39%, 80%);
+  --text-300: hsl(83, 39%, 70%);
+  --text-400: hsl(83, 39%, 60%);
+  --text-500: hsl(83, 39%, 50%);
+  --text-600: hsl(83, 39%, 40%);
+  --text-700: hsl(83, 39%, 30%);
+  --text-800: hsl(83, 39%, 20%);
+  --text-900: hsl(82, 37%, 10%);
+  --text-950: hsl(84, 38%, 5%);
+
+  --background-50: hsl(92, 52%, 95%);
+  --background-100: hsl(89, 53%, 90%);
+  --background-200: hsl(89, 51%, 80%);
+  --background-300: hsl(89, 52%, 70%);
+  --background-400: hsl(89, 51%, 60%);
+  --background-500: hsl(89, 51%, 50%);
+  --background-600: hsl(89, 51%, 40%);
+  --background-700: hsl(89, 52%, 30%);
+  --background-800: hsl(89, 51%, 20%);
+  --background-900: hsl(89, 53%, 10%);
+  --background-950: hsl(88, 52%, 5%);
+
+  --primary-50: hsl(83, 100%, 95%);
+  --primary-100: hsl(84, 100%, 90%);
+  --primary-200: hsl(83, 100%, 80%);
+  --primary-300: hsl(83, 100%, 70%);
+  --primary-400: hsl(83, 100%, 60%);
+  --primary-500: hsl(83, 100%, 50%);
+  --primary-600: hsl(83, 100%, 40%);
+  --primary-700: hsl(83, 100%, 30%);
+  --primary-800: hsl(83, 100%, 20%);
+  --primary-900: hsl(84, 100%, 10%);
+  --primary-950: hsl(83, 100%, 5%);
+
+  --secondary-50: hsl(240, 100%, 95%);
+  --secondary-100: hsl(240, 100%, 90%);
+  --secondary-200: hsl(240, 100%, 80%);
+  --secondary-300: hsl(240, 100%, 70%);
+  --secondary-400: hsl(240, 100%, 60%);
+  --secondary-500: hsl(240, 100%, 50%);
+  --secondary-600: hsl(240, 100%, 40%);
+  --secondary-700: hsl(240, 100%, 30%);
+  --secondary-800: hsl(240, 100%, 20%);
+  --secondary-900: hsl(240, 100%, 10%);
+  --secondary-950: hsl(240, 100%, 5%);
+
+  --accent-50: hsl(293, 100%, 95%);
+  --accent-100: hsl(293, 100%, 90%);
+  --accent-200: hsl(293, 100%, 80%);
+  --accent-300: hsl(293, 100%, 70%);
+  --accent-400: hsl(293, 100%, 60%);
+  --accent-500: hsl(293, 100%, 50%);
+  --accent-600: hsl(293, 100%, 40%);
+  --accent-700: hsl(293, 100%, 30%);
+  --accent-800: hsl(293, 100%, 20%);
+  --accent-900: hsl(293, 100%, 10%);
+  --accent-950: hsl(293, 100%, 5%);
+
+  --font-primary: 'Be Vietnam Pro', Arial, Helvetica, sans-serif;
+  --font-secondary: 'Source Code Pro', Arial, Helvetica, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #020617;
+  background-image:
+    linear-gradient(to right, rgba(71, 85, 105, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(71, 85, 105, 0.15) 1px, transparent 1px),
+    radial-gradient(circle at 50% 60%,
+      rgba(236, 72, 153, 0.15) 0%,
+      rgba(168, 85, 247, 0.05) 40%,
+      transparent 70%);
+  background-attachment: fixed;
+  background-size:
+    40px 40px,
+    40px 40px,
+    100% 100%;
+  min-height: 100vh;
+  position: relative;
+  inset: 0;
+  z-index: 0;
+  margin: 0;
+  overflow-x: hidden;
+
+  /* margin-top: 75px;  this is for the space backside of the navigation bar */
+}
+
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  src: url('/fonts/Be_Vietnam_Pro/BeVietnamPro-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  src: url('/fonts/Be_Vietnam_Pro/BeVietnamPro-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  src: url('/fonts/Be_Vietnam_Pro/BeVietnamPro-ExtraBold.ttf');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Code Pro';
+  src: url('/fonts/Source_Code_Pro/SourceCodePro-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-primary);
+  color: var(--primary-400);
+}
+
+div,
+p,
+span,
+li,
+a {
+  font-family: var(--font-secondary);
+  /* color: var(--secondary-400); */
+}
+
+section {
+  margin: 2rem 0;
+}

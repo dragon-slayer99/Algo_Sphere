@@ -1,0 +1,174 @@
+.container {
+  padding: 20px;
+  width: 90%;
+  margin: auto;
+  /* border: 1px solid var(--primary-50); */
+  border-radius: 10px;
+
+  animation: fadeUp both;
+  animation-timeline: view();
+  animation-range: entry 30% cover 40%;
+}
+
+.title {
+  font-size: clamp(1.45rem, 4vw + 1rem, 3rem);
+  margin-bottom: 0.8rem;
+  text-align: center;
+  color: var(--text-400);
+}
+
+.tableWrapper {
+  border: 1px solid var(--accent-100);
+  overflow-x: auto;
+
+}
+
+table {
+  border-collapse: collapse;
+  font-family: var(--font-secondary);
+  font-size: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+td:not(:first-child),
+th {
+  color: var(--text-50);
+}
+
+th {
+  font-family: var(--font-primary);
+}
+
+tr td:first-child a svg {
+  display: inline-block;
+  margin-right: 3px;
+  width: 16px;
+  height: 16px;
+}
+
+tr td:first-child a {
+  text-align: center;
+  color: var(--secondary-200);
+}
+
+th,
+td {
+  background-clip: padding-box;
+  overflow: hidden;
+  padding: 8px;
+  text-align: center;
+}
+
+th:not(:last-child),
+td:not(:last-child) {
+  border-right: 1px solid var(--accent-100);
+}
+
+tr:not(:last-child) th,
+tr:not(:last-child) td {
+  border-bottom: 1px solid var(--accent-100);
+}
+
+td:hover {
+  filter: brightness(220%);
+}
+
+/* Extra small devices (phones, portrait) */
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+  }
+
+  table {
+    font-size: 10%;
+  }
+
+  tr td:first-child a svg {
+    width: 9px;
+  }
+
+  th,
+  td {
+    padding: 2px;
+  }
+
+  td {
+    max-width: 8px;
+  }
+}
+
+/* Small devices (large phones, phablets) */
+@media (max-width: 768px) {
+  .container {
+    padding: 0;
+    width: 100%;
+  }
+
+}
+
+/* Medium devices (tablets, small laptops) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 10px;
+    width: 95%;
+  }
+
+  table {
+    font-size: 20%;
+  }
+
+  tr td:first-child a svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  th,
+  td {
+    padding: 6px;
+  }
+
+  td {
+    max-width: 80px;
+  }
+}
+
+.red {
+  background-color: rgba(255, 77, 77, 0.7);
+}
+
+.oliveGreen {
+  background-color: rgba(169, 220, 118, 0.7);
+}
+
+.green {
+  background-color: rgba(63, 200, 111, 0.7);
+}
+
+.orange {
+  background-color: rgba(255, 161, 22, 0.7);
+}
+
+.yellow {
+  background-color: rgba(255, 216, 102, 0.7);
+}
+
+.gray {
+  background-color: rgba(190, 190, 190, 0.7);
+}
+
+@keyframes fadeUp {
+  from {
+    filter: saturate(0) blur(5px) contrast(4) brightness(.1);
+    opacity: 0;
+    scale: 0.9;
+    translate: 0 2rem;
+  }
+
+  to {
+    filter: none;
+    opacity: 1;
+    scale: 1;
+    translate: 0 0;
+  }
+}

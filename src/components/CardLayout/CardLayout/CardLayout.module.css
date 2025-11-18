@@ -1,0 +1,25 @@
+
+
+.title {
+  font-size: clamp(1.45rem, 4vw, 3rem);
+  margin-bottom: 0.8rem;
+  text-align: center;
+  color: var(--text-400);
+}
+
+
+
+.cardgrid {
+    display: grid;
+    width: 90%;
+    margin: auto;
+    gap: 1.2rem 1.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+    .cardgrid {
+        width: 90%;
+    }
+}

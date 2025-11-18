@@ -1,0 +1,168 @@
+    .tabwrapper {
+        margin: 50px auto;
+    }
+
+    .title {
+        font-size: clamp(1.45rem, 4vw + 1rem, 3rem);
+        margin-bottom: 0.8rem;
+        text-align: center;
+        color: var(--primary-200);
+    }
+
+    .tabcontainer {
+        width: 60%;
+        border: 1px solid rgba(255, 255, 255, 0.23);
+        padding: 20px;
+        border-radius: 23px;
+        margin: auto;
+        background-color: #020617;
+        background-image:
+            linear-gradient(to right, rgba(71, 85, 105, 0.15) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(71, 85, 105, 0.15) 1px, transparent 1px),
+            radial-gradient(circle at 50% 60%,
+                rgba(236, 72, 153, 0.15) 0%,
+                rgba(168, 85, 247, 0.1) 25%,
+                rgba(37, 99, 235, 0.05) 50%,
+                transparent 80%);
+        background-size: 80px 80px, 80px 80px, 100% 100%;
+        background-blend-mode: overlay;
+        box-shadow: 0 0 20px rgba(168, 85, 247, 0.15);
+
+    }
+
+    .tabs {
+
+        --tab-count: 4;
+        --active-tab: 0;
+
+        display: flex;
+        height: 3.5rem;
+        margin-bottom: 10px;
+        position: relative;
+        isolation: isolate;
+    }
+
+    .tabs input {
+        display: none;
+    }
+
+    .tabs label {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        /** Works on main-axis (Horizantal)*/
+        align-items: center;
+        /** Works on cross-axis (Vertical)*/
+        font-size: 1.3rem;
+        font-family: monospace;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 12px;
+    }
+
+    .tabs input:not(:checked) + label svg {
+        width: 30px;
+        transition: all 0.3s ease-in-out;
+    }
+
+
+    .tabs label svg {
+        width: 35px;
+        fill: white;
+        transition: fill 0.4s ease-in-out;
+    }
+
+    .tabs input:not(:checked) + label:hover svg {
+        width: 35px;
+    }
+
+
+    .tabs input:checked + label {
+        color: black;
+        /* border: 1px solid white;
+        background-color: white; */
+    }
+
+    .tabs input:checked + label svg {
+        fill: black;
+    }
+
+    /*
+        1st tab = 0 * 100% = 0%
+        2st tab = 1 * 100% = 100%
+        3st tab = 2 * 100% = 200%
+        4st tab = 3 * 100% = 300%
+        */
+
+    .tabs::after {
+        content: '';
+        pointer-events: none;
+        position: absolute;
+        inset: 0;
+        background-color: var(--primary-400);
+        z-index: -1;
+        width: calc((100% / var(--tab-count)));
+        border: 1px solid rgba(0, 0, 0, 0.252);
+        border-block-end: none;
+        border-radius: 10px;
+
+        translate: calc(var(--active-tab) * 100%);
+        transition: translate 0.4s ease-in-out;
+    }
+
+    /* Extra small devices (phones, portrait) */
+    @media (min-width: 320px) {
+        .tabcontainer {
+            width: 95%;
+            padding: 10px;
+            border-radius: 18px;
+        }
+
+        .tabcontent {
+            padding: 0;
+        }
+
+        .tabs {
+            height: 2.8rem;
+        }
+
+        .tabs label svg {
+            width: 30px;
+        }
+
+        .tabs input:not(:checked) + label svg {
+            width: 25px;
+        }
+
+    }
+
+    /* Small devices (large phones, phablets) */
+    @media (min-width: 768px) {
+        .tabcontainer {
+            width: 80%;
+            padding: 10px;
+            border-radius: 18px;
+        }
+
+    }
+
+    /* Medium devices (tablets, small laptops) */
+    @media (min-width: 820px) {
+        .tabcontainer {
+            width: 70%;
+
+        }
+
+        .tabs {
+            height: 3.5rem;
+        }
+
+        .tabs label svg {
+            width: 35px;
+        }
+
+        .tabs input:not(:checked) + label svg {
+            width: 30px;
+        }
+
+    }
