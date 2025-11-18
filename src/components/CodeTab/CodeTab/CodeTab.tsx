@@ -23,16 +23,16 @@ function CodeTab({
   const renderTabContent = () => {
     switch (activeTab) {
       case 'python':
-        return <CodeBlock code={pythonCode} language={'py'} />
+        return <CodeBlock code={pythonCode} lang={'py'} />
         break
       case 'java':
-        return <CodeBlock code={javaCode} language={'java'} />
+        return <CodeBlock code={javaCode} lang={'java'} />
         break
       case 'javascript':
-        return <CodeBlock code={javascriptCode} language={'js'} />
+        return <CodeBlock code={javascriptCode} lang={'js'} />
         break
       case 'cpp':
-        return <CodeBlock code={cppCode} language={'cpp'} />
+        return <CodeBlock code={cppCode} lang={'cpp'} />
         break
       default:
         return null
