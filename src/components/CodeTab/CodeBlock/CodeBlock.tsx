@@ -1,15 +1,7 @@
 import { useEffect, useState } from 'react'
 
-// import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter'
-// import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { Code } from "bright/react";
 
-// import python from 'react-syntax-highlighter/dist/esm/languages/prism/python';
-// import cpp from 'react-syntax-highlighter/dist/esm/languages/prism/cpp';
-// import java from 'react-syntax-highlighter/dist/esm/languages/prism/java';
-// import javascript from 'react-syntax-highlighter/dist/esm/languages/prism/javascript';
-// import styles from './CodeBlock.module.css'
-
-import {Code} from 'bright'
 
 import {CopyCheckIcon, CopyIcon} from 'lucide-react'
 import styles from './CodeBlock.module.css'
