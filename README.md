@@ -1,4 +1,4 @@
-# TanStack Project (AlgoSphere)
+# AlgoSphere
 
 A modern web application built to visualize and teach algorithms and data structures. This project leverages the power of the **TanStack** ecosystem (Router, Start) and **React** to provide an interactive learning experience.
 
@@ -27,9 +27,9 @@ src/
 ├── components/         # Reusable UI components and route implementations
 │   ├── RoutesImplementation/ # Main page content for each route
 │   ├── Notations/      # Charts and tables for algorithm data
+│   ├── links/          # Navigation links for cards in card layout
 │   └── ...
 ├── routes/             # TanStack Router file-based route definitions
-├── lib/                # Utility functions
 └── styles.css          # Global styles and Tailwind directives
 ```
 
@@ -47,7 +47,7 @@ Follow these steps to set up the project locally on your machine.
 1. **Clone the repository**
    ```bash
    git clone https://github.com/dragon-slayer99/Algo_Sphere.git
-   cd Tanstack_Project
+   cd Algo_Sphere
    ```
 
 2. **Install dependencies**
