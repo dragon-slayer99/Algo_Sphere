@@ -1,8 +1,6 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Prism from 'prismjs'
 
-// 1. Import Prism CSS (Theme)
-// import 'prismjs/themes/prism-tomorrow.css'
 import './prism-vsc-dark-plus.css'
 
 import 'prismjs/components/prism-javascript'
@@ -10,6 +8,7 @@ import 'prismjs/components/prism-java'
 import 'prismjs/components/prism-c'
 import 'prismjs/components/prism-cpp'
 import 'prismjs/components/prism-python'
+import { CopyCheckIcon, CopyIcon } from 'lucide-react'
 
 type CodeBlockProps = {
   code: string
@@ -17,6 +16,12 @@ type CodeBlockProps = {
 }
 
 export default function CodeBlock({ code, lang }: CodeBlockProps) {
+  const [copied, setCopied] = useState(false)
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(code)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
   useEffect(() => {
     // This triggers the highlighting whenever the component mounts or updates
     if (typeof window !== 'undefined') {
@@ -27,8 +32,25 @@ export default function CodeBlock({ code, lang }: CodeBlockProps) {
   return (
     <div
       className="code-block-wrapper"
-      style={{ borderRadius: '8px', overflow: 'hidden' }}
+      style={{ borderRadius: '8px', overflow: 'hidden', position: 'relative' }}
     >
+      <button
+        onClick={copyToClipboard}
+        style={{
+          position: 'absolute',
+          top: 8,
+          right: 8,
+          padding: '4px 8px',
+          fontSize: '12px',
+          background: 'transparent',
+          color: '#fff',
+          border: 'none',
+          borderRadius: '4px',
+          cursor: 'pointer',
+        }}
+      >
+        {copied ? <CopyCheckIcon /> : <CopyIcon />}
+      </button>
       <pre className="line-numbers" style={{ margin: 0, padding: '1.5rem' }}>
         <code className={`language-${lang}`}>{code ? code.trim() : ''}</code>
       </pre>
