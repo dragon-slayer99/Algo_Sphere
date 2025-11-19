@@ -44,7 +44,7 @@ Follow these steps to set up the project locally on your machine.
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/dragon-slayer99/Algo_Sphere.git
    cd Tanstack_Project
    ```
 
