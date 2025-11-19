@@ -1,9 +1,6 @@
 import { useState } from 'react'
-
 import CodeBlock from '../CodeBlock/CodeBlock'
 import styles from './CodeTab.module.css'
-
-
 import { cppIcon, javaIcon, javascriptIcon, pythonIcon } from '@/Icons'
 
 function CodeTab({
@@ -23,17 +20,13 @@ function CodeTab({
   const renderTabContent = () => {
     switch (activeTab) {
       case 'python':
-        return <CodeBlock code={pythonCode} lang={'py'} />
-        break
+        return <CodeBlock code={pythonCode} lang="python" />
       case 'java':
-        return <CodeBlock code={javaCode} lang={'java'} />
-        break
+        return <CodeBlock code={javaCode} lang="java" />
       case 'javascript':
-        return <CodeBlock code={javascriptCode} lang={'js'} />
-        break
+        return <CodeBlock code={javascriptCode} lang="javascript" />
       case 'cpp':
-        return <CodeBlock code={cppCode} lang={'cpp'} />
-        break
+        return <CodeBlock code={cppCode} lang="cpp" />
       default:
         return null
     }
@@ -42,6 +35,7 @@ function CodeTab({
   return (
     <div className={styles.tabwrapper} id={ID}>
       <h1 className={`${styles.title}`}>{algorithmName}</h1>
+
       <div className={styles.tabcontainer}>
         <div
           className={styles.tabs}
@@ -58,6 +52,7 @@ function CodeTab({
             } as React.CSSProperties
           }
         >
+          {/* Python Tab */}
           <input
             type="radio"
             id={`python-${ID}`}
@@ -67,6 +62,7 @@ function CodeTab({
           />
           <label htmlFor={`python-${ID}`}>{pythonIcon}</label>
 
+          {/* Java Tab */}
           <input
             type="radio"
             id={`java-${ID}`}
@@ -76,6 +72,7 @@ function CodeTab({
           />
           <label htmlFor={`java-${ID}`}>{javaIcon}</label>
 
+          {/* JavaScript Tab */}
           <input
             type="radio"
             id={`javascript-${ID}`}
@@ -85,6 +82,7 @@ function CodeTab({
           />
           <label htmlFor={`javascript-${ID}`}>{javascriptIcon}</label>
 
+          {/* C++ Tab */}
           <input
             type="radio"
             id={`cpp-${ID}`}
