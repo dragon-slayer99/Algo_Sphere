@@ -6,7 +6,6 @@ A modern web application built to visualize and teach algorithms and data struct
 
 ##  Features
 
-- **Algorithm Visualizations**: Interactive charts and tables for understanding sorting algorithms and data structure operations.
 - **Educational Routes**: Structured learning paths including Fundamentals, Core Concepts, Advanced Topics, and Patterns.
 - **Modern UI**: Built with Tailwind CSS for a sleek, responsive design.
 - **Type-Safe Routing**: Utilizes TanStack Router for robust and type-safe navigation.
